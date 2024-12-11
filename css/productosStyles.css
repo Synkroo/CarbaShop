@@ -1,0 +1,15 @@
+body {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--clr-main);
+  }
+  
+div {
+    background-color: var(--clr-white);
+    height: 97%;
+    width: 97%;
+    border-radius: 10px;
+}
