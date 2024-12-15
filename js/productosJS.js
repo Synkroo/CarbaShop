@@ -19,18 +19,21 @@ document.addEventListener("DOMContentLoaded", function() {
         { "titulo": "Televisiones 04", "imagen": "./img/televisiones/04.jpg", "precio": 550, "categoria": "televisiones" },
         { "titulo": "Televisiones 05", "imagen": "./img/televisiones/05.jpg", "precio": 1200, "categoria": "televisiones" }
     ];
-
+ 
     const contenedorProductos = document.getElementById("contenedor-productos");
+    const numerito = document.getElementById("numerito"); // Elemento que muestra el número del carrito
+    let listaCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    // Crear los productos en el contenedor
+    numerito.textContent = listaCarrito.length;
+
     function mostrarProductos(categoria = "todos") {
-        // Limpiar el contenedor antes de agregar los productos
-        contenedorProductos.innerHTML = "";
+        const contenedorProductos = document.getElementById("contenedor-productos");
+        contenedorProductos.innerHTML = ""; // Limpiar el contenedor
 
-        // Filtrar los productos según la categoría seleccionada
-        const productosFiltrados = categoria === "todos" ? productos : productos.filter(producto => producto.categoria === categoria);
+        const productosFiltrados = categoria === "todos"
+            ? productos
+            : productos.filter(producto => producto.categoria === categoria);
 
-        // Crear los elementos de producto
         productosFiltrados.forEach(producto => {
             const productoDiv = document.createElement("div");
             productoDiv.classList.add("producto");
@@ -44,6 +47,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img class="producto-imagen" src="${producto.imagen}" alt="Imagen de ${producto.titulo}">
             `;
 
+            // Agregar el producto al carrito cuando se haga clic en "Agregar"
+            const botonAgregar = productoDiv.querySelector(".producto-agregar");
+            botonAgregar.addEventListener("click", () => {
+                listaCarrito.push(producto); // Agregar el producto al carrito
+                localStorage.setItem('carrito', JSON.stringify(listaCarrito)); // Guardar el carrito en localStorage
+                numerito.textContent = listaCarrito.length; // Actualizar el númer
+            });
+
             contenedorProductos.appendChild(productoDiv);
         });
     }
@@ -53,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Manejar los clics en los botones de categoría
     const botonesCategorias = document.querySelectorAll('.boton-categoria');
-    
     botonesCategorias.forEach(boton => {
         boton.addEventListener('click', function() {
             // Eliminar la clase 'active' de todos los botones

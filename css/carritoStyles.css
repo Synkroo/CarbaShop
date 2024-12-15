@@ -112,4 +112,55 @@ body {
     display: none;
   }
   
-  
+  .carrito-producto {
+    display: flex;
+    background-color: var(--clr-gray);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+  .carrito-producto-imagen {
+    width: 5rem;
+    height: auto;
+    margin-right: 8rem;
+  }
+    
+  .carrito-producto-titulo {
+    margin-right: 4rem;
+    margin-top: 1.5rem;
+    color: var(--clr-main);
+  }
+
+  .carrito-producto-cantidad {
+    margin-right: 8rem;
+    margin-top: 1.5rem;
+    color: var(--clr-main);
+  }
+
+  .carrito-producto-precio {
+    margin-right: 8rem;
+    margin-top: 1.5rem;
+    color: var(--clr-main);
+  }
+
+  .carrito-producto-subtotal {
+    margin-right: 8rem;
+    margin-top: 1.5rem;
+    color: var(--clr-main);
+  }
+
+.carrito-producto-comprar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 5rem;
+  color: var(--clr-main);
+}
+
+.carrito-producto-eliminar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 5rem;
+  color: var(--clr-red)
+}

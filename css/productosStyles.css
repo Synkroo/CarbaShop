@@ -76,13 +76,26 @@ li :hover{
 }
 
 #todos {
-  background-color: var(--clr-white);
-  color:var(--clr-main);
   border-radius: 10px;
   width: 93%;
   text-align: unset;
   margin-left: 1rem;
 }
+
+
+.boton-categoria.active {
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  border-radius: 10px;
+}
+
+
+.boton-categoria:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  border-radius: 10px;
+}
+
 
 #moviles {
   margin-left: 1rem;
@@ -115,11 +128,23 @@ li :hover{
   margin-left: 1rem;
 }
 
-i {
-  padding-right: 1rem;
-  transform: rotate(180deg);
+
+.active .bi::before {
+  transform: rotate(90deg);
 }
 
+.active .bi-cart-fill::before {
+  transform: rotate(0deg);
+}
+
+i {
+  margin-right: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-white);
+}
 
 footer {
   position: absolute;
