@@ -164,3 +164,44 @@ body {
   margin-right: 5rem;
   color: var(--clr-red)
 }
+
+#carrito-acciones {
+  display: flex;
+}
+
+#vaciar-carrito {
+  background-color: var(--clr-gray);
+  border: none;
+  padding: 1rem;
+  border-radius: 20px;
+  color: var(--clr-main);
+  font-size: x-large;
+  cursor: pointer;
+}
+
+#comprar-ahora {
+  background-color: var(--clr-main);
+  border: none;
+  color: var(--clr-white);
+  padding: 1rem;
+  border-radius: 0px 20px 20px 0px;
+  width: 10rem;
+  font-size: large;
+  cursor: pointer;
+}
+
+.carrito-acciones-derecha {
+  background-color: var(--clr-gray);
+  margin-left: 60%;
+  display: flex;
+  width: 20rem;
+  border-radius: 20px;
+  color: var(--clr-main);
+}
+
+.carrito-acciones-total {
+  padding: 1rem;
+  color: var(--clr-main);
+  width: 10rem;
+  font-size: large;
+}

@@ -4,17 +4,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const carritoComprado = document.getElementById("carrito-comprado");
     const totalElement = document.getElementById("Total");
 
+    // Botones nuevos
+    const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
+    const comprarAhoraBtn = document.getElementById("comprar-ahora");
+    const carritoAcciones = document.getElementById("carrito-acciones");
+
     // Recuperar los productos del carrito desde localStorage
     let listaCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    carritoAcciones.style.display = "none"; // Ocultar botones de acción
 
     // Mostrar los productos en el carrito
     if (listaCarrito.length === 0) {
         carritoVacio.style.display = "block"; // Mostrar el mensaje de carrito vacío
         carritoComprado.style.display = "none"; // Ocultar el mensaje de compra
+        carritoAcciones.style.display = "none"; // Ocultar botones de acción
         return;
+    } else {
+        carritoVacio.style.display = "none"; // Ocultar el mensaje de carrito vacío
+        carritoAcciones.style.display = "flex"; // Mostrar los botones de acción
     }
-
-    carritoVacio.style.display = "none"; // Ocultar el mensaje de carrito vacío
 
     let total = 0;
     contenedorCarrito.innerHTML = ''; // Limpiar el contenido antes de agregar los productos
@@ -22,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Agrupar productos similares y actualizar cantidades
     listaCarrito = listaCarrito.reduce((acumulador, producto) => {
         const encontrado = acumulador.find(item => item.titulo === producto.titulo);
-        
+
         if (encontrado) {
             // Si el producto ya está en el carrito, aumentar la cantidad y subtotal
             encontrado.cantidad += 1;
@@ -80,11 +89,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    totalElement.textContent = `$${total}`; // Mostrar el total del carrito
+    totalElement.textContent = `TOTAL: $${total}`; // Mostrar el total del carrito
+
+    // Acción para vaciar el carrito con confirmación
+    vaciarCarritoBtn.addEventListener("click", function () {
+        if (confirm("¿Estás seguro de que quieres vaciar el carrito?")) {
+            listaCarrito = []; // Vaciar el carrito
+            localStorage.setItem('carrito', JSON.stringify(listaCarrito)); // Actualizar el carrito en localStorage
+            location.reload(); // Recargar la página para actualizar el carrito
+        }
+    });
+
+    // Acción para simular la compra con confirmación
+    comprarAhoraBtn.addEventListener("click", function () {
+        if (confirm("¿Estás seguro de que quieres realizar esta compra?")) {
+            alert("¡Gracias por tu compra!"); // Simulación de una compra
+            listaCarrito = []; // Vaciar el carrito
+            localStorage.setItem('carrito', JSON.stringify(listaCarrito)); // Actualizar el carrito en localStorage
+            location.reload(); // Recargar la página para actualizar el carrito
+        }
+    });
 
     // Mostrar mensaje de compra cuando se vacía el carrito
     if (listaCarrito.length === 0) {
-        carritoVacio.style.display = "block";
         carritoComprado.style.display = "none";
+        carritoAcciones.style.display = "none"; // Ocultar botones
     }
 });
