@@ -1,4 +1,3 @@
-// Obtener referencias a los elementos del formulario
 const nombre = document.getElementById("nombre");
 const password = document.getElementById("password");
 const errorNombre = document.getElementById("error-nombre");
@@ -9,7 +8,6 @@ const limpiarButton = document.getElementById("limpiar");
 errorNombre.style.color = "red";
 errorPassword.style.color = "red";
 
-// Validar nombre
 function validarNombre() {
   const valor = nombre.value.trim();
 
@@ -35,7 +33,6 @@ function validarNombre() {
   return true;
 }
 
-// Validar contraseña
 function validarPassword() {
   const valor = password.value.trim();
 
@@ -56,7 +53,6 @@ function validarPassword() {
   return true;
 }
 
-// Validar formulario completo
 function validarFormulario(event) {
   event.preventDefault(); 
   const nombreValido = validarNombre();
@@ -70,7 +66,6 @@ function validarFormulario(event) {
   return true;
 }
 
-// Limpiar datos del formulario
 function limpiarDatos() {
   nombre.value = "";
   password.value = "";
@@ -78,7 +73,6 @@ function limpiarDatos() {
   errorPassword.style.display = "none";
 }
 
-// Eventos
 nombre.addEventListener("blur", validarNombre);
 password.addEventListener("blur", validarPassword);
 submitButton.addEventListener("click", validarFormulario);

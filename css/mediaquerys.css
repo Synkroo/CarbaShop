@@ -1,0 +1,133 @@
+@media (max-width: 850px) {
+    main {
+        width: 65%;
+        padding: 1rem;
+    }
+
+    .aside-visible {
+        width: 33%;
+    }
+
+    .contenedor-productos {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5vh;
+    }
+
+    .producto-detalles {
+        width: 100%;
+    }
+
+    .producto-imagen {
+        height: 24vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 675px) {
+    main {
+        width: 60%;
+        padding: 0.5rem;
+    }
+
+    .aside-visible {
+        width: 40%;
+        padding: 0.5rem;
+    }
+
+    .contenedor-productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1vh;
+    }
+
+    .producto-detalles {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .producto-imagen {
+        height: 20vh;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .boton-categoria, .boton-carrito {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    .menu {
+        top: 20%;
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 1.5vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .aside-visible {
+        display: none;
+    }
+
+    .header-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: var(--clr-main);
+        color: var(--clr-white);
+    }
+
+    .close-menu {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60%;
+        height: 100%;
+        background-color: var(--clr-main);
+        flex-direction: column;
+        padding: 2rem;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+    }
+
+    .close-menu.active {
+        transform: translateX(0);
+    }
+
+    .menu {
+        position: static;
+        width: 100%;
+    }
+
+    main {
+        width: 94%;
+        margin: 0;
+        padding: 1rem;
+        margin-left: 1rem;
+    }
+
+    .contenedor-productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .producto-detalles {
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    .producto-imagen {
+        height: 20vh;
+        width: 90%;
+        margin: 0 auto;
+    }
+}

@@ -148,7 +148,7 @@ a {
 
 footer {
   position: absolute;
-  bottom: 2.5%;
+  bottom: 10vh;
 }
 
 #close-menu {
