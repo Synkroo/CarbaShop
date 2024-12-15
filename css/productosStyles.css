@@ -24,7 +24,7 @@ main {
   background-color: var(--clr-white);
   padding: 2rem;
   margin-left: 3vh;
-  width: 90%;
+  width: 70%;
   overflow: auto;
   border-radius: 10px;
 }
@@ -41,38 +41,32 @@ main h2 {
   flex-direction: column;
   color: var(--clr-white);
   padding: 1rem;
-  width: 20%;
+  width: 28%;
 }
 
 .logo {
   font-size: 2vh;
   text-align: center;
   font-weight: normal;
-  justify-content: center; 
+  justify-content: center;
+  cursor: pointer; 
 }
 
 .menu {
   text-align: left;
   position: absolute;
-  top: 35%;
-  width: 100%;
+  top: 25%;
+  width: 31.5rem;
 }
 
 li .boton-menu {
   background-color: var(--clr-main);
   color: var(--clr-white);
   font-size: 1rem;
-  padding: 0.5rem;
+  padding: 1rem;
   border: none;
   cursor: pointer;
   margin-bottom: 5rem;
-}
-
-#todos {
-  background-color: var(--clr-white);
-  color:var(--clr-main);
-  border-radius: 10px;
-  width: 26rem;
 }
 
 li :hover{
@@ -80,6 +74,52 @@ li :hover{
   color:var(--clr-main);
   border-radius: 10px;
 }
+
+#todos {
+  background-color: var(--clr-white);
+  color:var(--clr-main);
+  border-radius: 10px;
+  width: 93%;
+  text-align: unset;
+  margin-left: 1rem;
+}
+
+#moviles {
+  margin-left: 1rem;
+  padding-right: 73%;
+}
+
+#portatiles{
+  margin-left: 1rem;
+  padding-right: 70%;
+}
+
+#televisiones{
+  margin-left: 1rem;
+  padding-right: 67%;
+}
+
+.boton-carrito{
+  margin-left: 1rem;
+  color: var(--clr-main) !important;
+  background-color: var(--clr-white) !important;
+  border-radius: 10px;
+  padding-right: 66% !important;
+}
+
+#numerito {
+  padding: 0.3rem;
+  border-radius: 5px;
+  color: var(--clr-white)  !important;
+  background-color: var(--clr-main) !important;
+  margin-left: 1rem;
+}
+
+i {
+  padding-right: 1rem;
+  transform: rotate(180deg);
+}
+
 
 footer {
   position: absolute;
@@ -98,16 +138,9 @@ footer {
 }
 
 .producto {
-  display: inline-block;
   margin-right: 1vh;
-}
-
-.producto-imagen {
   display: flex;
-  height: 26vh;
-  width: 21vh;
-  margin-left: 1rem;
-  margin-bottom: 1rem;  
+  flex-flow: column-reverse;
 }
 
 .producto-detalles {
@@ -117,6 +150,14 @@ footer {
   color: var(--clr-white);
   padding: 0.5rem;
   margin-bottom: 1rem;
+  margin-top: -1.5rem;
+}
+
+.producto-imagen {
+  display: flex;
+  height: 26vh;
+  width: 21vh;
+  margin-left: 1rem;
 }
 
 .producto-agregar {
@@ -125,8 +166,8 @@ footer {
   font-size: 1rem;
   padding: 0.5rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
-  margin: 5%;
-  width: 90%;
+  margin: 1%;
+  width: 97%;
 }

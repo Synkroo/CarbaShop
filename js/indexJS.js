@@ -58,6 +58,7 @@ function validarPassword() {
 
 // Validar formulario completo
 function validarFormulario(event) {
+  event.preventDefault(); 
   const nombreValido = validarNombre();
   const passwordValido = validarPassword();
 
@@ -65,8 +66,7 @@ function validarFormulario(event) {
     event.preventDefault(); 
     return false;
   }
-
-  alert("Accediendo al portal CarbaShop");
+    window.location.href = "main.html"; 
   return true;
 }
 
